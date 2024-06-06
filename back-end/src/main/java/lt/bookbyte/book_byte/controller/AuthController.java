@@ -1,6 +1,7 @@
 package lt.bookbyte.book_byte.controller;
 
 import lombok.AllArgsConstructor;
+import lt.bookbyte.book_byte.dto.JwtAuthResponse;
 import lt.bookbyte.book_byte.dto.LoginDto;
 import lt.bookbyte.book_byte.dto.RegisterDto;
 import lt.bookbyte.book_byte.service.AuthService;
@@ -27,8 +28,11 @@ public class AuthController {
     //Build Login REST API
 
     @PostMapping("/login")
-    public ResponseEntity<String> login (@RequestBody LoginDto loginDto ){
-        String response = authService.login(loginDto);
-        return  new ResponseEntity<>(response, HttpStatus.OK);
+    public ResponseEntity<JwtAuthResponse> login (@RequestBody LoginDto loginDto ){
+        String token = authService.login(loginDto);
+        JwtAuthResponse jwtAuthResponse = new JwtAuthResponse();
+        jwtAuthResponse.setAccessToken(token);
+
+        return  new ResponseEntity<>(jwtAuthResponse, HttpStatus.OK);
     }
 }

@@ -9,6 +9,7 @@ import lt.bookbyte.book_byte.entity.User;
 import lt.bookbyte.book_byte.exeption.BookByteAPIExeption;
 import lt.bookbyte.book_byte.repository.RoleRepository;
 import lt.bookbyte.book_byte.repository.UserRepository;
+import lt.bookbyte.book_byte.security.JwtTokenProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -29,6 +30,7 @@ public class AuthServiceImpl  implements AuthService{
     private RoleRepository roleRepository;
     private PasswordEncoder passwordEncoder;
     private AuthenticationManager authenticationManager;
+    private JwtTokenProvider jwtTokenProvider;
     @Override
     @Transactional
     public String register(RegisterDto registerDto) {
@@ -79,7 +81,9 @@ public class AuthServiceImpl  implements AuthService{
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
+        String token = jwtTokenProvider.generateToken(authentication);
 
-        return "User logged in successfully!";
+
+        return token;
     }
 }
