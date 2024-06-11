@@ -1,0 +1,34 @@
+#login-card-header{
+    background-color: rgb(133, 201, 200);
+    color: white;
+}
+#login-w-100{
+    border-color: rgb(133, 201, 200);
+    border: solid 2px rgb(133, 201, 200);;
+}
+#login-w-100:hover{
+    box-Shadow: 0px 0px 0px 3px rgb(106, 213, 212);
+}
+#login-button{
+    background-color: rgb(133, 201, 200);
+    border-radius: 10px;
+    border: 1px solid rgb(133, 201, 200);
+    color: white;
+}
+#login-button:hover{
+    background-color: rgb(106, 213, 212);
+    box-Shadow: 0px 0px 0px 3px rgb(106, 213, 212);
+    border-color: rgb(106, 213, 212);
+}
+#login-card{
+    border: none;
+    box-Shadow: 0px 0px 0px 3px rgb(106, 213, 212);
+   
+}
+#login-input{
+    border-color: rgb(133, 201, 200);
+    border: solid 2px rgb(133, 201, 200);;
+}
+#login-input:hover{
+    box-Shadow: 0px 0px 0px 3px rgb(106, 213, 212);
+}

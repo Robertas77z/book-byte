@@ -1,0 +1,40 @@
+#register-head{
+    background-color: rgb(133, 201, 200);
+    color: white;
+}
+#register-input-1{
+    border-color: rgb(133, 201, 200);
+    border: solid 2px rgb(133, 201, 200);;
+}
+#register-input-1:hover{
+    box-Shadow: 0px 0px 0px 3px rgb(106, 213, 212);
+}
+#register-input-2{
+    border-color: rgb(133, 201, 200);
+    border: solid 2px rgb(133, 201, 200);;
+}
+#register-input-2:hover{
+    box-Shadow: 0px 0px 0px 3px rgb(106, 213, 212);
+}
+#register-input-3{
+    border-color: rgb(133, 201, 200);
+    border: solid 2px rgb(133, 201, 200);;
+}
+#register-input-3:hover{
+    box-Shadow: 0px 0px 0px 3px rgb(106, 213, 212);
+}
+#register-card{
+    border: none;
+    box-Shadow: 0px 0px 0px 3px rgb(106, 213, 212);
+}
+#register-button{
+    background-color: rgb(133, 201, 200);
+    border-radius: 10px;
+    border: 1px solid rgb(133, 201, 200);
+    color: white;
+}
+#register-button:hover{
+    background-color: rgb(106, 213, 212);
+    box-Shadow: 0px 0px 0px 3px rgb(106, 213, 212);
+    border-color: rgb(106, 213, 212);
+}
