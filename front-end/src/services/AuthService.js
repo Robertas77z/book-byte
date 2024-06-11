@@ -27,7 +27,7 @@ export const isUserLoggedIn = () => {
 
 export const getLoggedInUser = () => {
     const username = sessionStorage.getItem("authenticatedUser");
-    return username;
+    return username ? username : "Anonimas"; 
 }
 
 

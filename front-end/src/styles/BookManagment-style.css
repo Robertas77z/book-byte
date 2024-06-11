@@ -1,0 +1,61 @@
+.mng-h2 {
+    text-align: center;
+  }
+  
+  .mng-form {
+    width: 400px;
+    margin: 20px auto; /* Centruoti horizontaliai */
+  }
+  
+  .mng-main {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .mng-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Tarpas tarp kortelių */
+    max-height: 90vh; /* Maksimalus aukštis */
+    overflow-y: auto; /* Slankiklis, jei kortelių daugiau nei tilps */
+    width: 800px;
+    margin-top: 40px;
+    margin-right: 50px;
+  }
+
+  
+  .mng-card {
+    flex: 0 0 calc(50% - 10px); /* Dvi kortelės vienoje eilutėje, su atstumu tarp jų */
+  }
+  
+  .mng-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .mng-card {
+    flex: 0 0 calc(50% - 10px); /* Dvi kortelės vienoje eilutėje, su atstumu tarp jų */
+    max-width: calc(50% - 10px); /* Kad kortelės nepersidengtų, kai jų daugiau */
+  }
+  
+  .mng-card-content {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .mng-card-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .mng-back{
+    margin-top: 50px;
+  }
+  #mng-btn-s{
+    margin-right: 5px;
+    margin-top: 10px;
+  }
+  #mng-btn-d{
+    margin-top: 10px;
+  }

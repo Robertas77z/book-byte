@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { loginAPICall, storeToken, saveLoggedInUser } from "../services/AuthService";
 import { useNavigate } from "react-router-dom";
+import "../styles/Login-style.css";
 
 const LoginComponent = () => {
   const [username, setUsername] = useState("");
@@ -30,9 +31,9 @@ const LoginComponent = () => {
       <br />
       <div className="row">
         <div className="col-md-6 offset-md-3">
-          <div className="card">
-            <div className="card-header">
-              <h2 className="text-center">Login Form</h2>
+          <div className="card" id='login-card'>
+            <div className="card-header" id='login-card-header'>
+              <h2 className="text-center">Prisijungimas</h2>
             </div>
 
             <div className="card-body">
@@ -40,39 +41,42 @@ const LoginComponent = () => {
                 <div className="row mb-3">
                   <label className="col-md-3 control-label">
                     {" "}
-                    Username or Email
+                   El.paštas arba Vardas
                   </label>
                   <div className="col-md-9">
                     <input
                       type="text"
                       name="username"
-                      placeholder="Enter username"
+                      placeholder="Įveskite Vardą arba El. paštą"
                       value={username}
                       onChange={(e) => setUsername(e.target.value)}
                       className="w-100"
+                      id='login-w-100'
                     />
                   </div>
                 </div>
 
                 <div className="row mb-3">
-                  <label className="col-md-3 control-label"> Password</label>
+                  <label className="col-md-3 control-label"> Slaptažodis</label>
                   <div className="col-md-9">
                     <input
                       type="password"
                       name="password"
-                      placeholder="Enter password"
+                      placeholder="Įveskite slaptažodį"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       className="w-100"
+                      id='login-input'
                     />
                   </div>
                 </div>
                 <div className="form-group mb-3">
                   <button
                     className="btn btn-primary"
+                    id='login-button'
                     onClick={(e) => handleLoginForm(e)}
                   >
-                    Submit
+                    Prisijungti
                   </button>
                 </div>
               </form>
