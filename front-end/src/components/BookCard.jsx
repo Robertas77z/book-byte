@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import "../styles/Book-style.css";
 
 const BookCard = ({ book, onToggleFavorite }) => {
@@ -48,6 +49,9 @@ const BookCard = ({ book, onToggleFavorite }) => {
           className="img-fluid img-small"
         />
       </div>
+      <Link to={`/book/${book.id}`} className="more-link">
+       <p className="b-c-b-s">Rašyti komentarą</p> 
+      </Link>
     </div>
   );
 };

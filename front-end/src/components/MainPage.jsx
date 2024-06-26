@@ -5,6 +5,7 @@ import BookCard from './BookCard';
 import { getBooksAPICall } from '../services/BookService';
 import { getCategoriesAPICall } from '../services/CategoryService';
 import "../styles/Book-style.css";
+import Footer from './Footer';
 
 const MainPage = () => {
   const [books, setBooks] = useState([]);
@@ -84,6 +85,7 @@ const MainPage = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

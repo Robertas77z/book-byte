@@ -9,6 +9,9 @@ import AdminPage from './components/AdminPage'
 import CategoryManagement from './components/CategoryManagement'
 import BookManagement from './components/BookManagment'
 import { isUserLoggedIn } from './services/AuthService'
+import CurrentBookCard from './components/CurrentBookCard'
+
+
 
 function App() {
   function AuthenticatedRoute({ children }) {
@@ -33,6 +36,9 @@ function App() {
       {/* http://localhost:3000/main */}
       <Route path='/main' element = {<MainPage/>}></Route>
        {/* http://localhost:3000/admin */}
+
+       <Route path="/book/:id" element ={<CurrentBookCard />}></Route>
+
       <Route path='/admin' 
       element={
         <AuthenticatedRoute>

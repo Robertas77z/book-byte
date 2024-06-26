@@ -45,3 +45,8 @@
     color: #ccc; /* Color for empty stars */
     cursor: pointer;
   }
+  .b-c-b-s{
+  padding-left: 15px;
+  color: rgb(105, 173, 172);
+ 
+  }

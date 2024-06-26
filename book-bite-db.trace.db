@@ -104,3 +104,30 @@ Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection wa
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
 	... 100 more
+2024-06-25 22:31:45.610453+03:00 jdbc[25]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "CONTENT CHARACTER VARYING(255)": "'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa... (425)"; SQL statement:
+insert into comment (book_id,content,created_at,id) values (?,?,?,default) [22001-224]
+2024-06-25 22:31:46.776692+03:00 jdbc[24]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "CONTENT CHARACTER VARYING(255)": "'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa... (425)"; SQL statement:
+insert into comment (book_id,content,created_at,id) values (?,?,?,default) [22001-224]
+2024-06-25 22:31:50.427339+03:00 jdbc[25]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "CONTENT CHARACTER VARYING(255)": "'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa... (425)"; SQL statement:
+insert into comment (book_id,content,created_at,id) values (?,?,?,default) [22001-224]
+2024-06-25 22:32:12.414144+03:00 jdbc[25]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "CONTENT CHARACTER VARYING(255)": "'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa... (380)"; SQL statement:
+insert into comment (book_id,content,created_at,id) values (?,?,?,default) [22001-224]
+2024-06-25 22:32:15.571035+03:00 jdbc[25]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "CONTENT CHARACTER VARYING(255)": "'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa... (329)"; SQL statement:
+insert into comment (book_id,content,created_at,id) values (?,?,?,default) [22001-224]
+2024-06-25 22:32:17.148282+03:00 jdbc[24]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "CONTENT CHARACTER VARYING(255)": "'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa... (271)"; SQL statement:
+insert into comment (book_id,content,created_at,id) values (?,?,?,default) [22001-224]
+2024-06-25 22:32:18.732522+03:00 jdbc[24]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "CONTENT CHARACTER VARYING(255)": "'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa... (261)"; SQL statement:
+insert into comment (book_id,content,created_at,id) values (?,?,?,default) [22001-224]
+2024-06-25 23:57:08.022938+03:00 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "U&'\\0160i knyga yra i\\0161sami \\012f\\017evalga \\012f automobili\\0173 technologij... (279)"; SQL statement:
+insert into book (category_id,description,image_url,isbn,page_count,title,id) values (?,?,?,?,?,?,default) [22001-224]
+2024-06-25 23:58:37.579183+03:00 jdbc[55]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "U&'\\0160i knyga yra i\\0161sami \\012f\\017evalga \\012f automobili\\0173 technologij... (279)"; SQL statement:
+insert into book (category_id,description,image_url,isbn,page_count,title,id) values (?,?,?,?,?,?,default) [22001-224]
