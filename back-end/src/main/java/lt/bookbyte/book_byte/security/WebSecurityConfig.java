@@ -45,6 +45,7 @@ public class WebSecurityConfig {
                         // Administratoriaus teisės
                         .requestMatchers("/api/categories/**").hasAnyRole("ADMIN", "USER")
                         .requestMatchers("/api/books/**").hasAnyRole("ADMIN", "USER")
+                        .requestMatchers("/api/comments/**").permitAll()
                         // Vartotojas (USER) turi teisę matyti knygas, ieškoti, kategorijas ir jų knygas
 //                        .requestMatchers("/api/books/**", "/api/categories/**").hasAnyRole("ADMIN", "USER")
                         .anyRequest().authenticated())

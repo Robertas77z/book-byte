@@ -6,57 +6,39 @@ import { getLoggedInUser, logout, isUserLoggedIn } from "../services/AuthService
 import { Modal, Button } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
-const Header = ({ onShowFavorites, onSearch }) => { 
+const CustomHeader = () => { 
   const [showModal, setShowModal] = useState(false);
   const [loggedInUsername, setLoggedInUsername] = useState("");
   const [isAdmin, setIsAdmin] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [filterActive, setFilterActive] = useState(false);
-  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const username = getLoggedInUser();
-    console.log("Prisijungęs naudotojas:", username); // Konsolės žinutė
+    console.log("Prisijungęs naudotojas:", username);
     if (username) {
       setLoggedInUsername(username);
     }
-    // Patikriname, ar vartotojas yra adminas
-    setIsAdmin(username === "admin"); // Pavyzdys, kaip galite patikrinti, ar vartotojas yra adminas
-    // Patikriname, ar vartotojas yra prisijungęs
+    setIsAdmin(username === "admin");
     setIsLoggedIn(isUserLoggedIn());
   }, []);
 
   const handleLogout = () => {
     logout();
-    window.location.reload(); // Atnaujina puslapį po atsijungimo
+    window.location.reload();
   };
 
   const handleModalClose = () => {
-    console.log("Modalas uždarytas"); // Konsolės žinutė
     setShowModal(false);
   };
 
   const handleModalOpen = () => {
-    console.log("Modalas atidarytas"); // Konsolės žinutė
     setShowModal(true);
-  };
-
-  const handleShowFavorites = () => {
-    onShowFavorites();
-    setFilterActive(!filterActive);
-  };
-
-  const handleSearch = (e) => {
-    const searchTerm = e.target.value;
-    setSearchTerm(searchTerm);
-    onSearch(searchTerm);
   };
 
   return (
     <div className="container" style={{ paddingTop: "10px" }}>
       <header className="header-style">
-        <a href="">
+        <a href="http://localhost:3000/main">
           <img
             src={logo}
             height="100"
@@ -64,33 +46,6 @@ const Header = ({ onShowFavorites, onSearch }) => {
             style={{ borderRadius: "10px" }}
           />
         </a>
-        <form className="d-flex" role="search">
-          <input
-            className="form-control me-2"
-            type="search"
-            placeholder="Ieškoti tarp visu esamu knygų"
-            id="header-search"
-            value={searchTerm}
-            onChange={handleSearch}
-          />
-           <i className="fas fa-search"></i>
-        </form>
-        <div>
-          <div className="marked-books">
-            <div className="form-check form-switch">
-              <input 
-                className="form-check-input" 
-                type="checkbox" 
-                id="flexSwitchCheckDefault" 
-                checked={filterActive} 
-                onChange={handleShowFavorites} 
-              />
-              <label className="form-check-label" htmlFor="flexSwitchCheckDefault">
-                {filterActive ? "Grįžti į visas knygas" : "Mano įsimintos knygos"}
-              </label>
-            </div>
-          </div>
-        </div>
         {isLoggedIn ? (
           <>
             <button className="users-initials" onClick={handleModalOpen}>
@@ -142,4 +97,4 @@ const Header = ({ onShowFavorites, onSearch }) => {
   );
 };
 
-export default Header;
+export default CustomHeader;

@@ -1,0 +1,82 @@
+.book-details-container {
+    display: flex;
+    padding: 20px;
+   
+  }
+  
+  .current-book-card {
+    flex: 1;
+    margin-right: 20px;
+    border: 1px solid rgb(133, 201, 200);;
+    padding: 20px;
+  }
+
+  
+  .book-details {
+    flex: 1;
+    padding-top: 20px;
+  }
+  
+  textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #010000;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  .comments-list {
+    margin-top: 20px;
+    max-height: 450px;
+    overflow-y: auto;
+  }
+  
+  .comment {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    word-break: break-all;
+  }
+  
+  .comment p {
+    margin-bottom: 5px;
+  }
+  
+  .delete-comment {
+    display: flex;
+    justify-content: flex-end; /* Mygtukas patraukiamas į dešinę */
+  }
+  
+  .delete-comment button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .delete-comment button:hover {
+    color: #dc3545; /* Pakeičiame spalvą prieš trinant komentarą */
+  }
+  
+  .comment-content {
+    word-wrap: break-word; /* Tekstas pertraukiamas, jei ilgas žodis ar eilutė */
+    overflow-wrap: break-word; /* Alternatyvi savybė (ta pati kaip word-wrap: break-word) */
+    white-space: pre-line; /* Užtikrina, kad būtų palaikomos tuščios eilutės */
+  }
+  .add-comment-btn{
+    background-color: rgb(133, 201, 200);; /* Spalva pagal Bootstrap pavyzdį */
+    color: #fff; /* Teksto spalva */
+    border: none; /* Pašalinkite numatomą mygtuko rėmą */
+    padding: 10px 20px; /* Pridėti apatinį ir viršutinį ašmenį pagal numatytuosius mygtuko padidinimus */
+    border-radius: 4px; /* Apvalinti kampus */
+    cursor: pointer; /* Rodiklis rodo, kad mygtukas yra paspaudžiamas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Papildomų mygtukų tema kurti poveikį */
+    transition: all 0.3s ease;
+  }
+  .add-comment-btn:hover{
+    box-Shadow: 0px 0px 0px 3px rgb(106, 213, 212);
+  }
+  

@@ -1,10 +1,13 @@
 package lt.bookbyte.book_byte.controller;
 
 import lt.bookbyte.book_byte.dto.BookDTO;
+import lt.bookbyte.book_byte.dto.CommentDTO;
 import lt.bookbyte.book_byte.entity.Book;
 import lt.bookbyte.book_byte.entity.Category;
+import lt.bookbyte.book_byte.entity.Comment;
 import lt.bookbyte.book_byte.service.BookService;
 import lt.bookbyte.book_byte.service.CategoryService;
+import lt.bookbyte.book_byte.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,10 +25,13 @@ public class BookController {
     private final BookService bookService;
     private final CategoryService categoryService;
 
+    private final CommentService commentService;
+
     @Autowired
-    public BookController(BookService bookService, CategoryService categoryService) {
+    public BookController(BookService bookService, CategoryService categoryService, CommentService commentService) {
         this.bookService = bookService;
         this.categoryService = categoryService;
+        this.commentService = commentService;
     }
 
     @PostMapping
@@ -113,4 +119,39 @@ public class BookController {
         List<Book> books = bookService.getBooksByCategoryId(categoryId);
         return new ResponseEntity<>(books, HttpStatus.OK);
     }
+    @GetMapping("/{bookId}/comments")
+    public ResponseEntity<List<Comment>> getCommentsForBook(@PathVariable Long bookId) {
+        Optional<Book> book = bookService.getBookById(bookId);
+        if (book.isPresent()) {
+            List<Comment> comments = book.get().getComments();
+            return new ResponseEntity<>(comments, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+    @PostMapping("/{bookId}/comments")
+    public ResponseEntity<Comment> addCommentToBook(@PathVariable Long bookId, @RequestBody CommentDTO commentDTO) {
+        Optional<Book> bookOptional = bookService.getBookById(bookId);
+        if (bookOptional.isPresent()) {
+            Book book = bookOptional.get();
+
+            // Sukuriame Comment objektą iš CommentDTO
+            Comment comment = new Comment();
+            comment.setContent(commentDTO.getContent());
+            // Galite pridėti kitus laukus pagal poreikį
+
+            // Pridedame komentarą prie knygos
+            book.addComment(comment);
+
+            // Išsaugome komentarą
+            Comment createdComment = commentService.saveComment(comment);
+
+            // Grąžiname sukurtą komentarą ir HTTP statusą CREATED
+            return new ResponseEntity<>(createdComment, HttpStatus.CREATED);
+        } else {
+            // Grąžiname HTTP statusą NOT_FOUND, jei knyga nerasta
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
 }

@@ -33,3 +33,6 @@ export const getBooksByCategoryAPICall = (categoryId) => {
   export const getAllBooksAPICall = () => {
     return axios.get(`/api/books`);
   };
+  export const getBookById = (id) => {
+    return axios.get(`${API_URL}/books/${id}`);
+  };
